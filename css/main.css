@@ -1,1 +1,155 @@
+/* ==========================================================================
+   SWISS TYPOGRAPHIC GRID & NATIVE CSS SYSTEM
+   ========================================================================== */
 
+:root {
+  /* Color Palette (Minimalist Dark / High Contrast) */
+  --color-bg: #09090b;
+  --color-surface: #121215;
+  --color-border: #27272a;
+  --color-text-main: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-accent: #38bdf8;
+
+  /* Typography Scale (Fluid) */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.9rem);
+  --step-0:  clamp(1.0rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.56rem, 1.4rem + 0.8vw, 2.0rem);
+  --step-3:  clamp(1.95rem, 1.7rem + 1.2.5vw, 2.66rem);
+
+  /* Vertical Rhythm & Spacing Scale (8px baseline) */
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs:  0.5rem;  /* 8px */
+  --space-sm:  1.0rem;  /* 16px */
+  --space-md:  1.5rem;  /* 24px */
+  --space-lg:  2.0rem;  /* 32px */
+  --space-xl:  3.0rem;  /* 48px */
+  --space-2xl: 4.5rem;  /* 72px */
+
+  /* Grid Geometry */
+  --grid-max-width: 1120px;
+  --grid-columns: 12;
+  --grid-gutter: var(--space-md);
+}
+
+/* Box Sizing & Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Swiss 12-Column Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gutter);
+  width: min(100% - var(--space-lg), var(--grid-max-width));
+  margin-inline: auto;
+}
+
+/* Column Span Helpers */
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-6  { grid-column: span 6; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+
+@media (max-width: 768px) {
+  .col-8, .col-6, .col-4, .col-3 {
+    grid-column: span 12;
+  }
+}
+
+/* Typographic Alignment & Hierarchy */
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-main);
+}
+
+h1 { font-size: var(--step-3); margin-bottom: var(--space-md); }
+h2 { font-size: var(--step-2); margin-bottom: var(--space-sm); }
+h3 { font-size: var(--step-1); margin-bottom: var(--space-xs); }
+
+p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Card Component (Swiss Border Structure) */
+.swiss-card {
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.swiss-card h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.meta-tag {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+/* Navigation System */
+header {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+  margin-top: var(--space-2xl);
+  font-size: var(--step--1);
+  color: var(--color-text-muted);
+}
