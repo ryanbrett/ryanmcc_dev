@@ -134,6 +134,12 @@ header {
   margin-bottom: var(--space-xl);
 }
 
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust this to get the exact spacing you want */
+}
+
 nav {
   display: flex;
   justify-content: space-between;
