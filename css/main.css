@@ -63,6 +63,261 @@ nav {
 }
 
 /* ==========================================================================
+   SWISS TYPOGRAPHIC GRID & NATIVE CSS SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Color Palette (Minimalist Dark / High Contrast) */
+  --color-bg: #09090b;
+  --color-surface: #121215;
+  --color-border: #27272a;
+  --color-text-main: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-accent: #38bdf8;
+
+  /* Typography Scale (Fluid) */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.9rem);
+  --step-0:  clamp(1.0rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.56rem, 1.4rem + 0.8vw, 2.0rem);
+  --step-3:  clamp(1.95rem, 1.7rem + 1.25vw, 2.66rem); /* Fixed syntax error */
+
+  /* Vertical Rhythm & Spacing Scale (8px baseline) */
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs:  0.5rem;  /* 8px */
+  --space-sm:  1.0rem;  /* 16px */
+  --space-md:  1.5rem;  /* 24px */
+  --space-lg:  2.0rem;  /* 32px */
+  --space-xl:  3.0rem;  /* 48px */
+  --space-2xl: 4.5rem;  /* 72px */
+
+  /* Grid Geometry */
+  --grid-max-width: 1120px;
+  --grid-columns: 12;
+  --grid-gutter: var(--space-md);
+}
+
+/* Box Sizing & Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Swiss 12-Column Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gutter);
+  width: min(100% - var(--space-lg), var(--grid-max-width));
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+/* Column Span Helpers */
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-6  { grid-column: span 6; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+
+@media (max-width: 768px) {
+  .col-8, .col-6, .col-4, .col-3 {
+    grid-column: span 12;
+  }
+}
+
+/* Typographic Alignment & Hierarchy */
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-main);
+}
+
+h1 { font-size: var(--step-3); margin-bottom: var(--space-md); }
+h2 { 
+  font-size: var(--step-2); 
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-xs);
+}
+h3 { font-size: var(--step-1); margin-bottom: var(--space-xs); }
+
+p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* List Structural Fixes */
+ul {
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+li {
+  margin-bottom: var(--space-2xs);
+}
+
+li strong {
+  color: var(--color-text-main);
+}
+
+a {
+  color: var(--color-text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Terminal Component */
+.terminal-container {
+  background-color: #121212;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.terminal-header {
+  background-color: #1e1e1e;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #333333;
+}
+
+.terminal-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.terminal-header .dot.red { background-color: #ff5f56; }
+.terminal-header .dot.yellow { background-color: #ffbd2e; }
+.terminal-header .dot.green { background-color: #27c93f; }
+
+.terminal-header .title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75rem;
+  color: #888888;
+  letter-spacing: 0.05em;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+}
+
+.terminal-body .prompt {
+  color: #27c93f;
+  font-weight: bold;
+}
+
+.app-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.app-list li {
+  margin-bottom: 0.6rem;
+}
+
+.app-list a {
+  color: #61afef;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.app-list a:hover {
+  color: #98c379;
+  text-decoration: underline;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Card Component */
+.swiss-card {
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.swiss-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+/* Experience Layout System */
+.experience-item {
+  margin-bottom: var(--space-xl);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-2xs);
+}
+
+.experience-header h3 {
+  margin-bottom: 0;
+}
+
+.role-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 500;
+  color: var(--color-text-main);
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: var(--space-xs);
+}
+
+.dates, .location {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
    FOOTER SYSTEM
    ========================================================================== */
 
