@@ -128,23 +128,21 @@ li strong {
 
 header {
   border-bottom: 1px solid var(--color-border);
-  padding-block: var(--space-md);
-  margin-bottom: var(--space-xl);
-  /* Enforces the global grid width so it aligns perfectly with your content */
-  width: min(100% - var(--space-lg), var(--grid-max-width));
-  margin-inline: auto;
+  padding-block: var(--space-sm); /* Tightened internal padding */
+  margin-bottom: var(--space-lg); /* Reduced from xl to close the huge gap */
 }
 
 nav {
-  /* display: flex and margin-inline removed to force natural left-aligned stacking */
   display: block;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .brand-group {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  margin-bottom: var(--space-2xs); /* Creates precise breathing room above the links */
+  margin-bottom: var(--space-2xs);
 }
 
 .brand-group h1, 
@@ -161,10 +159,10 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
-  /* Reduced gap to replicate the tighter, disciplined spacing from Image 1 */
   gap: var(--space-sm); 
   list-style: none !important; 
   padding-left: 0 !important;
+  margin-left: 0;
   margin-bottom: 0;
 }
 
