@@ -127,7 +127,6 @@ li strong {
    ========================================================================== */
 
 header {
-  border-bottom: 1px solid var(--color-border);
   padding-block: var(--space-sm); /* Tightened internal padding */
   margin-bottom: var(--space-lg); /* Reduced from xl to close the huge gap */
 }
