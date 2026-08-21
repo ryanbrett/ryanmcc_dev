@@ -1,7 +1,6 @@
 /* ==========================================================================
    SWISS TYPOGRAPHIC GRID & NATIVE CSS SYSTEM
    ========================================================================== */
-
 :root {
   /* Color Palette (Minimalist Dark / High Contrast) */
   --color-bg: #09090b;
@@ -120,6 +119,70 @@ li {
 }
 
 li strong {
+  color: var(--color-text-main);
+}
+
+/* ==========================================================================
+   NAVIGATION & HEADER SYSTEM
+   ========================================================================== */
+
+header {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-md);
+  margin-bottom: var(--space-xl);
+  /* Enforces the global grid width so it aligns perfectly with your content */
+  width: min(100% - var(--space-lg), var(--grid-max-width));
+  margin-inline: auto;
+}
+
+nav {
+  /* display: flex and margin-inline removed to force natural left-aligned stacking */
+  display: block;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xs); /* Creates precise breathing room above the links */
+}
+
+.brand-group h1, 
+.brand-group .logo-text {
+  font-size: var(--step-0);
+  margin-bottom: 0;
+}
+
+.brand-group a {
+  text-decoration: none;
+  color: var(--color-text-main);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* Reduced gap to replicate the tighter, disciplined spacing from Image 1 */
+  gap: var(--space-sm); 
+  list-style: none !important; 
+  padding-left: 0 !important;
+  margin-bottom: 0;
+}
+
+.nav-links li {
+  margin-bottom: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
   color: var(--color-text-main);
 }
 
@@ -261,68 +324,6 @@ li strong {
   font-family: var(--font-mono);
   font-size: var(--step--1);
   color: var(--color-text-muted);
-}
-
-/* ==========================================================================
-   NAVIGATION & HEADER SYSTEM
-   ========================================================================== */
-
-header {
-  border-bottom: 1px solid var(--color-border);
-  padding-block: var(--space-md);
-  margin-bottom: var(--space-xl);
-}
-
-/* Ensure the nav aligns with your grid container width */
-nav {
-  justify-content: space-between;
-  align-items: center;
-  width: min(100% - var(--space-lg), var(--grid-max-width));
-}
-
-.brand-group {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-
-.brand-group h1, 
-.brand-group .logo-text {
-  font-size: var(--step-0);
-  margin-bottom: 0;
-}
-
-.brand-group a {
-  text-decoration: none;
-  color: var(--color-text-main);
-}
-
-/* Force horizontal layout and strip the global list styling */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none !important; 
-  padding-left: 0 !important;
-  margin-bottom: 0;
-}
-
-.nav-links li {
-  margin-bottom: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--color-text-main);
 }
 
 /* ==========================================================================
