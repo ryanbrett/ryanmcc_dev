@@ -1,68 +1,4 @@
 /* ==========================================================================
-   NAVIGATION & HEADER SYSTEM
-   ========================================================================== */
-
-header {
-  border-bottom: 1px solid var(--color-border);
-  padding-block: var(--space-md);
-  margin-bottom: var(--space-xl);
-}
-
-/* Ensure the nav aligns with your grid container width */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: min(100% - var(--space-lg), var(--grid-max-width));
-  margin-inline: auto;
-}
-
-.brand-group {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-
-.brand-group h1, 
-.brand-group .logo-text {
-  font-size: var(--step-0);
-  margin-bottom: 0;
-}
-
-.brand-group a {
-  text-decoration: none;
-  color: var(--color-text-main);
-}
-
-/* Force horizontal layout and strip the global list styling */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none !important; 
-  padding-left: 0 !important;
-  margin-bottom: 0;
-}
-
-.nav-links li {
-  margin-bottom: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--color-text-main);
-}
-
-/* ==========================================================================
    SWISS TYPOGRAPHIC GRID & NATIVE CSS SYSTEM
    ========================================================================== */
 
@@ -83,16 +19,16 @@ nav {
   --step-0:  clamp(1.0rem, 0.95rem + 0.25vw, 1.125rem);
   --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
   --step-2:  clamp(1.56rem, 1.4rem + 0.8vw, 2.0rem);
-  --step-3:  clamp(1.95rem, 1.7rem + 1.25vw, 2.66rem); /* Fixed syntax error */
+  --step-3:  clamp(1.95rem, 1.7rem + 1.25vw, 2.66rem);
 
   /* Vertical Rhythm & Spacing Scale (8px baseline) */
-  --space-2xs: 0.25rem; /* 4px */
-  --space-xs:  0.5rem;  /* 8px */
-  --space-sm:  1.0rem;  /* 16px */
-  --space-md:  1.5rem;  /* 24px */
-  --space-lg:  2.0rem;  /* 32px */
-  --space-xl:  3.0rem;  /* 48px */
-  --space-2xl: 4.5rem;  /* 72px */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem; 
+  --space-sm:  1.0rem; 
+  --space-md:  1.5rem; 
+  --space-lg:  2.0rem; 
+  --space-xl:  3.0rem; 
+  --space-2xl: 4.5rem; 
 
   /* Grid Geometry */
   --grid-max-width: 1120px;
@@ -161,6 +97,17 @@ p {
   margin-bottom: var(--space-sm);
 }
 
+a {
+  color: var(--color-text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
 /* List Structural Fixes */
 ul {
   padding-left: var(--space-md);
@@ -174,17 +121,6 @@ li {
 
 li strong {
   color: var(--color-text-main);
-}
-
-a {
-  color: var(--color-text-main);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-accent);
 }
 
 /* Terminal Component */
@@ -284,6 +220,16 @@ a:hover {
   margin-bottom: var(--space-sm);
 }
 
+.meta-tag {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
 /* Experience Layout System */
 .experience-item {
   margin-bottom: var(--space-xl);
@@ -315,6 +261,70 @@ a:hover {
   font-family: var(--font-mono);
   font-size: var(--step--1);
   color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   NAVIGATION & HEADER SYSTEM
+   ========================================================================== */
+
+header {
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+/* Ensure the nav aligns with your grid container width */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100% - var(--space-lg), var(--grid-max-width));
+  margin-inline: auto;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.brand-group h1, 
+.brand-group .logo-text {
+  font-size: var(--step-0);
+  margin-bottom: 0;
+}
+
+.brand-group a {
+  text-decoration: none;
+  color: var(--color-text-main);
+}
+
+/* Force horizontal layout and strip the global list styling */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none !important; 
+  padding-left: 0 !important;
+  margin-bottom: 0;
+}
+
+.nav-links li {
+  margin-bottom: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-text-main);
 }
 
 /* ==========================================================================
