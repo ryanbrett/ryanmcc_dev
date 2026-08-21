@@ -128,7 +128,6 @@ li strong {
 
 header {
   padding-block: var(--space-sm); /* Tightened internal padding */
-  margin-bottom: var(--space-lg); /* Reduced from xl to close the huge gap */
 }
 
 nav {
