@@ -102,6 +102,85 @@ a:hover {
   color: var(--color-accent);
 }
 
+/*Terminal Design for Project Apps*/
+.terminal-container {
+  background-color: #121212;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  margin: 2rem 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+  background-color: #1e1e1e;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #333333;
+}
+
+.terminal-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.terminal-header .dot.red { background-color: #ff5f56; }
+.terminal-header .dot.yellow { background-color: #ffbd2e; }
+.terminal-header .dot.green { background-color: #27c93f; }
+
+.terminal-header .title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+.terminal-body {
+  padding: 1.2rem;
+}
+
+.terminal-body .prompt {
+  color: #27c93f;
+  font-weight: bold;
+}
+
+.app-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.app-list li {
+  margin-bottom: 0.5rem;
+}
+
+.app-list a {
+  color: #61afef;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.app-list a:hover {
+  color: #98c379;
+  text-decoration: underline;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 /* Card Component (Swiss Border Structure) */
 .swiss-card {
   border: 1px solid var(--color-border);
