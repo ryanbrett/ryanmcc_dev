@@ -275,11 +275,9 @@ header {
 
 /* Ensure the nav aligns with your grid container width */
 nav {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: min(100% - var(--space-lg), var(--grid-max-width));
-  margin-inline: auto;
 }
 
 .brand-group {
