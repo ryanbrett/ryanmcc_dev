@@ -1,39 +1,47 @@
 /* ==========================================================================
    SWISS TYPOGRAPHIC GRID & NATIVE CSS SYSTEM
+   Ryan McCullough — Technical Designer & Developer
    ========================================================================== */
 
 :root {
-  /* Color Palette (Minimalist Dark / High Contrast) */
-  --color-bg: #09090b;
-  --color-surface: #121215;
-  --color-border: #27272a;
-  --color-text-main: #f4f4f5;
-  --color-text-muted: #a1a1aa;
-  --color-accent: #38bdf8;
-
-  /* Typography Scale (Fluid) */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Color Palette (Deep Tactile Charcoal / Warm Accent Contrast) */
+  --color-bg: #0e0f13;
+  --color-surface: #14161c;
+  --color-surface-hover: #1b1d25;
+  --color-border: #232630;
+  --color-border-subtle: #191b22;
+  --color-border-strong: #3b3f4f;
   
-  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.9rem);
-  --step-0:  clamp(1.0rem, 0.95rem + 0.25vw, 1.125rem);
-  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-  --step-2:  clamp(1.56rem, 1.4rem + 0.8vw, 2.0rem);
-  --step-3:  clamp(1.95rem, 1.7rem + 1.2.5vw, 2.66rem);
+  --color-text-main: #f4f5f8;
+  --color-text-secondary: #c2c5d0;
+  --color-text-muted: #848899;
+  --color-text-dim: #535768;
+  --color-accent: #e28a55; /* Warm earthy accent for links */
+  --color-accent-hover: #f5a874;
 
-  /* Vertical Rhythm & Spacing Scale (8px baseline) */
-  --space-2xs: 0.25rem; /* 4px */
-  --space-xs:  0.5rem;  /* 8px */
-  --space-sm:  1.0rem;  /* 16px */
-  --space-md:  1.5rem;  /* 24px */
-  --space-lg:  2.0rem;  /* 32px */
-  --space-xl:  3.0rem;  /* 48px */
-  --space-2xl: 4.5rem;  /* 72px */
+  /* Typography Scale (Inter, Roboto first + Monospace system) */
+  --font-sans: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+  
+  --step--2: clamp(0.72rem, 0.70rem + 0.1vw, 0.80rem);
+  --step--1: clamp(0.82rem, 0.80rem + 0.15vw, 0.92rem);
+  --step-0:  clamp(0.98rem, 0.94rem + 0.22vw, 1.08rem);
+  --step-1:  clamp(1.18rem, 1.10rem + 0.35vw, 1.34rem);
+  --step-2:  clamp(1.42rem, 1.30rem + 0.65vw, 1.78rem);
+  --step-3:  clamp(1.85rem, 1.65rem + 1.0vw, 2.35rem);
+
+  /* Spacing Scale */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.875rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.25rem;
+  --space-xl:  3.5rem;
+  --space-2xl: 5.0rem;
 
   /* Grid Geometry */
-  --grid-max-width: 1120px;
-  --grid-columns: 12;
-  --grid-gutter: var(--space-md);
+  --grid-max-width: 820px;
 }
 
 /* Box Sizing & Resets */
@@ -43,119 +51,421 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text-main);
   font-family: var(--font-sans);
   font-size: var(--step-0);
-  line-height: 1.6;
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Swiss 12-Column Grid Layout */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(var(--grid-columns), 1fr);
-  gap: var(--grid-gutter);
+/* Swiss Layout Container (Strictly Left Aligned) */
+.page-container {
   width: min(100% - var(--space-lg), var(--grid-max-width));
   margin-inline: auto;
+  padding-inline: 0;
 }
 
-/* Column Span Helpers */
-.col-12 { grid-column: span 12; }
-.col-8  { grid-column: span 8; }
-.col-6  { grid-column: span 6; }
-.col-4  { grid-column: span 4; }
-.col-3  { grid-column: span 3; }
-
-@media (max-width: 768px) {
-  .col-8, .col-6, .col-4, .col-3 {
-    grid-column: span 12;
-  }
-}
-
-/* Typographic Alignment & Hierarchy */
-h1, h2, h3 {
+/* Typographic Alignment & Hierarchy (Balanced 600 weight for headers) */
+h1, h2, h3, h4 {
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
   color: var(--color-text-main);
 }
 
-h1 { font-size: var(--step-3); margin-bottom: var(--space-md); }
-h2 { font-size: var(--step-2); margin-bottom: var(--space-sm); }
-h3 { font-size: var(--step-1); margin-bottom: var(--space-xs); }
+h1 {
+  font-size: var(--step-3);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2xs);
+}
+
+h2 {
+  font-size: var(--step-2);
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--step-1);
+  font-weight: 600;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-2xs);
+  letter-spacing: -0.005em;
+}
 
 p {
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+  max-width: 72ch;
 }
 
-a {
+p.lead {
+  font-size: var(--step-0);
+  line-height: 1.7;
   color: var(--color-text-main);
+  margin-bottom: var(--space-sm);
+}
+
+/* Link Styling (High contrast, warm tactile feel) */
+a {
+  color: var(--color-accent);
   text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color 0.2s ease;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(226, 138, 85, 0.45);
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
 }
 
 a:hover {
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent-hover);
+}
+
+a.silent-link {
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+a.silent-link:hover {
   color: var(--color-accent);
+  text-decoration: underline;
 }
 
-/* Card Component (Swiss Border Structure) */
-.swiss-card {
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  padding: var(--space-md);
-  background-color: var(--color-surface);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #e2e4ea;
 }
 
-.swiss-card h3 {
-  margin-bottom: var(--space-xs);
+/* Monospaced Technical Tags & Index Labels */
+.meta-tag, .index-num, .spec-badge {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .meta-tag {
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
   color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-xs);
-  display: block;
+  display: inline-block;
+  margin-bottom: var(--space-2xs);
 }
 
-/* Navigation System */
-header {
+/* ==========================================================================
+   SITE HEADER & GROUPED LEFT-ALIGNED NAVIGATION
+   ========================================================================== */
+
+header.site-header {
   border-bottom: 1px solid var(--color-border);
   padding-block: var(--space-md);
   margin-bottom: var(--space-xl);
+  background: rgba(14, 15, 19, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.brand-group {
+.nav-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-align: left;
+}
+
+/* Top row: Brand name + Color Buttons */
+.nav-brand-row {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adjust this to get the exact spacing you want */
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-nav {
+.brand-title {
+  font-size: var(--step-0);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.18s ease;
+}
+
+.brand-title:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Color Buttons Group (Fixed size - Zero jumping) */
+.color-buttons-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 2px;
+}
+
+.color-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transform-origin: center center;
+  /* Smooth opacity, filter & scale transition */
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease,
+              filter 0.2s ease;
+}
+
+.color-btn img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Bottom row: Navigation Words */
+.nav-links-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link-item {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: inline-block;
+  padding-block: 2px;
+  position: relative;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+.nav-link-item:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   INTERACTIVE NAVIGATION SYNCHRONIZATION ENGINE
+   ========================================================================== */
+
+/* When hovering an item: Darken only the other color buttons at their original size */
+.nav-cluster.is-highlighting .color-btn:not(.is-active) {
+  transform: scale(1);
+  opacity: 0.28;
+  filter: grayscale(35%) brightness(0.55);
+}
+
+/* Active Highlighted Button (Enlarged and highlighted with glow) */
+.color-btn.is-active {
+  transform: scale(1.35) translateY(-1px);
+  opacity: 1 !important;
+  filter: brightness(1.25) drop-shadow(0 2px 5px rgba(255, 255, 255, 0.35)) !important;
+  z-index: 5;
+}
+
+/* When hovering over Brand name ("Ryan McCullough"):
+   Darken all buttons slightly at original scale */
+.nav-cluster.is-all-dimmed .color-btn {
+  transform: scale(1);
+  opacity: 0.32 !important;
+  filter: grayscale(40%) brightness(0.5) !important;
+}
+
+/* Active Highlighted Word (Underline & Full White) */
+.nav-link-item.is-active {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.nav-link-item.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+/* Current Page Marker */
+.nav-link-item[aria-current="page"] {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   UNIFIED ARTICLE, SECTION & ENTRY STYLING (PROJECTS, ABOUT, ARCHIVE)
+   ========================================================================== */
+
+/* Quick Table of Contents / Year Jump List */
+.projects-toc-list, .archive-toc-list, .site-toc-list {
+  list-style: disc;
+  padding-left: var(--space-md);
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  font-size: var(--step-0);
+  line-height: 1.9;
+}
+
+.projects-toc-list li, .archive-toc-list li, .site-toc-list li {
+  color: var(--color-text-secondary);
+}
+
+.projects-toc-list a, .archive-toc-list a, .site-toc-list a {
+  font-weight: 500;
+}
+
+/* Article Entries (Shared across Projects, Landing Page & Archive) */
+.content-entry, .project-entry, .archive-entry {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.content-entry:last-child, .project-entry:last-child, .archive-entry:last-child {
+  border-bottom: none;
+}
+
+.content-entry h2, .project-entry h2, .archive-entry h2 {
+  font-size: var(--step-2);
+  margin-top: 0;
+  margin-bottom: var(--space-2xs);
+}
+
+.entry-url-link, .project-url-link, .archive-url-link {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  word-break: break-all;
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+}
+
+.content-entry p, .project-entry p, .archive-entry p {
+  margin-bottom: var(--space-xs);
+}
+
+.entry-meta-links, .project-meta-links, .archive-meta-links {
+  margin-top: var(--space-xs);
+  font-size: var(--step--1);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   CAPABILITIES & SYSTEMS LISTS
+   ========================================================================== */
+
+.capabilities-block {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.capabilities-list {
+  list-style: none;
+  line-height: 1.8;
+  margin-top: var(--space-2xs);
+}
+
+.capabilities-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2xs);
+}
+
+.capabilities-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-text-dim);
+}
+
+/* Direct Contact Block */
+.contact-block {
+  margin-top: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-left: 2px solid var(--color-accent);
+}
+
+.contact-row {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: var(--step-0);
+}
+
+.contact-item strong {
+  color: var(--color-text-muted);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   SITE FOOTER
+   ========================================================================== */
+
+footer.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+  margin-top: auto;
+  font-size: var(--step--1);
+  color: var(--color-text-muted);
+}
+
+.footer-grid {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-md);
 }
 
-.nav-links {
+.footer-links {
   display: flex;
   gap: var(--space-md);
   list-style: none;
-}
-
-footer {
-  border-top: 1px solid var(--color-border);
-  padding-block: var(--space-xl);
-  margin-top: var(--space-2xl);
   font-size: var(--step--1);
-  color: var(--color-text-muted);
+  flex-wrap: wrap;
 }

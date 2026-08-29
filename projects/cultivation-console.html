@@ -3,90 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/RM-Logo.svg" />
   <title>Case Study: Cultivation Console — Ryan McCullough</title>
   <meta name="description" content="Case study on the Cultivation Console: Precision agriculture proof-of-concept integrating RFID tracking and drone telemetry.">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script defer src="/js/nav.js"></script>
 </head>
 <body>
 
   <!-- Site Navigation Header -->
-  <header>
-    <div class="grid-container">
-      <div class="col-12">
-        <nav aria-label="Main Navigation">
-          <a href="../index.html" class="brand-logo">
-            <strong>Ryan McCullough</strong>
+  <header class="site-header" id="header">
+    <div class="page-container">
+      <nav class="nav-cluster" aria-label="Main Navigation">
+        
+        <!-- Row 1: Brand Identifier + Color Buttons -->
+        <div class="nav-brand-row">
+          <a href="/index.html" class="brand-title" id="brand-link" title="Ryan McCullough — Home">
+            Ryan McCullough
           </a>
-          <ul class="nav-links">
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="index.html">All Case Studies</a></li>
-            <li><a href="../index.html#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+
+          <div class="color-buttons-group" id="color-buttons-group" role="group" aria-label="Interactive Navigation Squares">
+            <a href="/index.html#about" class="color-btn" data-target="about" aria-label="Navigate to About" title="About">
+              <img src="/assets/img/color-btn-beige.png" alt="Beige button — about">
+            </a>
+            <a href="/projects.html" class="color-btn" data-target="projects" aria-label="Navigate to Projects" title="Projects">
+              <img src="/assets/img/color-btn-green.png" alt="Green button — projects">
+            </a>
+            <a href="/archive.html" class="color-btn" data-target="archive" aria-label="Navigate to Archive" title="Archive">
+              <img src="/assets/img/color-btn-pink.png" alt="Pink button — archive">
+            </a>
+            <a href="/index.html#systems" class="color-btn" data-target="systems" aria-label="Navigate to Systems" title="Systems & Architecture">
+              <img src="/assets/img/color-btn-yellow.png" alt="Yellow button — systems">
+            </a>
+            <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="color-btn" data-target="resume" aria-label="View Typst Dynamic Resume" title="Resume">
+              <img src="/assets/img/color-btn-teal.png" alt="Teal button — resume">
+            </a>
+            <a href="/index.html#contact" class="color-btn" data-target="contact" aria-label="Navigate to Contact" title="Contact">
+              <img src="/assets/img/color-btn-purple.png" alt="Purple button — contact">
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2: Navigation Words -->
+        <ul class="nav-links-row" id="nav-links-list">
+          <li>
+            <a href="/index.html#about" class="nav-link-item" data-target="about" id="nav-about">about</a>
+          </li>
+          <li>
+            <a href="/projects.html" class="nav-link-item" data-target="projects" id="nav-projects">projects</a>
+          </li>
+          <li>
+            <a href="/archive.html" class="nav-link-item" data-target="archive" id="nav-archive">archive</a>
+          </li>
+          <li>
+            <a href="/index.html#systems" class="nav-link-item" data-target="systems" id="nav-systems">systems</a>
+          </li>
+          <li>
+            <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="nav-link-item" data-target="resume" id="nav-resume">resume</a>
+          </li>
+          <li>
+            <a href="/index.html#contact" class="nav-link-item" data-target="contact" id="nav-contact">contact</a>
+          </li>
+        </ul>
+
+      </nav>
     </div>
   </header>
 
-  <main>
-    <article class="grid-container">
-      <!-- Case Study Header -->
-      <header class="col-12" style="border-bottom: none; margin-bottom: var(--space-md); padding-block: 0;">
-        <span class="meta-tag">Case Study / Precision Agriculture</span>
-        <h1>Cultivation Console</h1>
-        <p style="font-size: var(--step-1); color: var(--color-text-main);">
-          A web-based telemetry console designed to streamline regulatory compliance and environmental visualization for commercial agricultural operations.
-        </p>
-      </header>
-
-      <!-- Project Metadata Sidebar -->
-      <aside class="col-4">
-        <div class="swiss-card">
-          <div>
-            <h3>Project Details</h3>
-            <dl style="margin-top: var(--space-xs);">
-              <dt class="meta-tag">Role</dt>
-              <dd><p>Lead Developer & System Architect</p></dd>
-              
-              <dt class="meta-tag">Technologies</dt>
-              <dd><p>HTML5, Native CSS Grid, Telemetry APIs, RFID/Metrc Logic</p></dd>
-              
-              <dt class="meta-tag">Domain</dt>
-              <dd><p><a href="https://ag.ryanmccullough.dev/" target="_blank" rel="noopener">ag.ryanmccullough.dev</a></p></dd>
-            </dl>
-          </div>
+  <main class="page-container">
+    
+    <!-- Case Study Header -->
+    <section style="margin-bottom: var(--space-xl); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-lg);">
+      <span class="meta-tag">Project Overview // Precision Agriculture & Regulatory Telemetry</span>
+      <h1>Cultivation Console</h1>
+      <p class="lead">
+        A web-based telemetry console designed to streamline regulatory compliance, plant health monitoring, and environmental visualization for commercial agricultural operations.
+      </p>
+      
+      <!-- Specifications Header Bar -->
+      <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-subtle); font-family: var(--font-mono); font-size: var(--step--1);">
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">ROLE</span>
+          <span style="color: var(--color-text-main);">Lead Developer & System Architect</span>
         </div>
-      </aside>
-
-      <!-- Case Study Core Body -->
-      <div class="col-8">
-        <section>
-          <h2>Objective & Problem Statement</h2>
-          <p>Multi-generational agricultural enterprises face increasing regulatory complexity under tracking standards like Metrc. Farm operators needed a unified interface to view plant health telemetry without navigating fragmented software silos.</p>
-        </section>
-
-        <section style="margin-top: var(--space-xl);">
-          <h2>Engineering Solution</h2>
-          <p>The Cultivation Console merges drone-captured multispectral imaging, ambient climate logging, and RFID batch scanning into a single dashboard structured around strict visual hierarchy.</p>
-          <p>By enforcing high visual contrast and readable typography, farm personnel can quickly monitor growth cycles and verify regulatory labeling compliance directly on shop-floor tablets.</p>
-        </section>
-
-        <section style="margin-top: var(--space-xl);">
-          <h2>Key Outcomes</h2>
-          <ul style="color: var(--color-text-muted); padding-left: var(--space-md); margin-bottom: var(--space-md);">
-            <li>Centralized RFID strain tracking with zero external framework dependencies.</li>
-            <li>Sub-second page load times achieved by replacing heavy UI component suites with native CSS layouts.</li>
-            <li>Simplified operational audits through structured semantic data export.</li>
-          </ul>
-        </section>
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">TIMELINE</span>
+          <span style="color: var(--color-text-main);">2026</span>
+        </div>
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">STACK</span>
+          <span style="color: var(--color-text-main);">Semantic HTML5, Native CSS, Telemetry APIs, Metrc RFID</span>
+        </div>
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">LIVE CONSOLE</span>
+          <a href="https://ag.ryanmccullough.dev/" target="_blank" rel="noopener">ag.ryanmccullough.dev ↗</a>
+        </div>
       </div>
-    </article>
+    </section>
+
+    <!-- Case Study Content -->
+    <div style="max-width: 68ch; margin-bottom: var(--space-2xl);">
+      
+      <section id="problem" style="margin-bottom: var(--space-xl);">
+        <span class="meta-tag">01 // Problem Statement</span>
+        <h2>Fragmented Telemetry & State Tracking</h2>
+        <p>
+          Commercial agricultural enterprises face exponential compliance overhead under state-mandated tracking systems such as Metrc. Farm operators and compliance officers often have to juggle separate drone imagery portals, soil sensor logs, and batch-tagging spreadsheets.
+        </p>
+        <p>
+          This fragmentation creates severe operational latency, increases manual data entry errors during audit logging, and slows down emergency remediation when environmental stress occurs.
+        </p>
+      </section>
+
+      <section id="engineering" style="margin-bottom: var(--space-xl);">
+        <span class="meta-tag">02 // Technical Architecture</span>
+        <h2>Unified Operational Interface</h2>
+        <p>
+          The Cultivation Console brings drone multispectral imagery, ambient climate telemetry, and RFID tag status into a single, high-contrast operational cockpit.
+        </p>
+        <p>
+          By eliminating heavy third-party UI framework dependencies and adhering to native CSS layouts, the entire console loads in under 300ms on low-bandwidth shop-floor tablets and mobile field devices.
+        </p>
+      </section>
+
+      <section id="compliance" style="margin-bottom: var(--space-xl);">
+        <span class="meta-tag">03 // Compliance & RFID Logic</span>
+        <h2>Deterministic Regulatory Enforcements</h2>
+        <p>
+          The console enforces automatic batch validation before any harvest or transfer manifest is exported. If an RFID tag or batch number contains missing moisture readings or unauthorized pesticide logs, the system halts generation and flags the compliance officer with unambiguous visual indicators.
+        </p>
+      </section>
+
+      <section id="outcomes" style="margin-bottom: var(--space-xl);">
+        <span class="meta-tag">04 // Impact & Deliverables</span>
+        <h2>Key Outcomes</h2>
+        <ul class="capabilities-list" style="margin-top: var(--space-xs); font-size: var(--step-0);">
+          <li style="margin-bottom: var(--space-xs);"><strong>Sub-second telemetry updates:</strong> Field sensors stream real-time data directly to lightweight browser visualizers.</li>
+          <li style="margin-bottom: var(--space-xs);"><strong>Zero third-party library overhead:</strong> Semantic HTML and native CSS ensure cross-device consistency and longevity.</li>
+          <li style="margin-bottom: var(--space-xs);"><strong>Audit-ready data feeds:</strong> Single-click compliance manifest generation compliant with state regulatory frameworks.</li>
+        </ul>
+      </section>
+
+      <div style="padding-top: var(--space-md); border-top: 1px solid var(--color-border); display: flex; gap: var(--space-md); align-items: center; flex-wrap: wrap;">
+        <a href="https://ag.ryanmccullough.dev/" target="_blank" rel="noopener">
+          Launch Live Cultivation Console ↗
+        </a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="/projects.html">
+          &larr; Back to Projects
+        </a>
+      </div>
+
+    </div>
+
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="grid-container">
-      <div class="col-12">
-        <a href="../index.html">&larr; Back to Landing Page</a>
+  <footer class="site-footer">
+    <div class="page-container footer-grid">
+      <div>
+        <p style="margin-bottom: 0;">&copy; 2026 Ryan McCullough. Built with semantic HTML5 and native CSS.</p>
+      </div>
+      <div style="text-align: right;">
+        <a href="/projects.html">&larr; Return to Projects</a> &nbsp;|&nbsp;
+        <a href="/archive.html">Archive</a> &nbsp;|&nbsp;
+        <a href="/index.html">Home</a>
       </div>
     </div>
   </footer>

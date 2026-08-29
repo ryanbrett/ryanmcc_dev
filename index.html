@@ -3,99 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="/RM-Logo.svg" />
-  <title>Ryan McCullough — Developer & Designer</title>
-  <meta name="description" content="Portfolio of Ryan McCullough: Graphic Lead & Technical Systems Developer specializing in compliance-first architecture and precision agriculture systems.">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/RM-Logo.svg" />
+  <title>Ryan McCullough — Technical Designer & Developer</title>
+  <meta name="description" content="Portfolio of Ryan McCullough: Technical Designer and Developer specializing in code-driven automation, industrial pre-press workflows, and precision UI/UX architecture.">
+  <link rel="stylesheet" href="/css/main.css">
+  <script defer src="/js/nav.js"></script>
 </head>
 <body>
-  <!-- Site Navigation Header -->
-  <header>
-    <div class="grid-container">
-      <div class="col-12">
-        <nav aria-label="Main Navigation">
-          <div class="brand-group">
-            <a href="index.html" class="brand-logo">
-              <strong>Ryan McCullough</strong>
-              <img src="/assets/img/rm-color-logo.png" alt="Color logo" style="height: 27px; margin-bottom: -8px;"></a>
+
+  <!-- Site Navigation Header (Grouped Left-Aligned Swiss Layout) -->
+  <header class="site-header" id="header">
+    <div class="page-container">
+      <nav class="nav-cluster" aria-label="Main Navigation">
+        
+        <!-- Row 1: Brand Identifier + Color Buttons -->
+        <div class="nav-brand-row">
+          <a href="/index.html" class="brand-title" id="brand-link" title="Ryan McCullough — Home">
+            Ryan McCullough
+          </a>
+
+          <div class="color-buttons-group" id="color-buttons-group" role="group" aria-label="Interactive Navigation Squares">
+            <a href="/index.html#about" class="color-btn" data-target="about" aria-label="Navigate to About" title="About">
+              <img src="/assets/img/color-btn-beige.png" alt="Beige button — about">
+            </a>
+            <a href="/projects.html" class="color-btn" data-target="projects" aria-label="Navigate to Projects" title="Projects">
+              <img src="/assets/img/color-btn-green.png" alt="Green button — projects">
+            </a>
+            <a href="/archive.html" class="color-btn" data-target="archive" aria-label="Navigate to Archive" title="Archive">
+              <img src="/assets/img/color-btn-pink.png" alt="Pink button — archive">
+            </a>
+            <a href="/index.html#systems" class="color-btn" data-target="systems" aria-label="Navigate to Systems" title="Systems & Architecture">
+              <img src="/assets/img/color-btn-yellow.png" alt="Yellow button — systems">
+            </a>
+            <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="color-btn" data-target="resume" aria-label="View Typst Dynamic Resume" title="Resume">
+              <img src="/assets/img/color-btn-teal.png" alt="Teal button — resume">
+            </a>
+            <a href="/index.html#contact" class="color-btn" data-target="contact" aria-label="Navigate to Contact" title="Contact">
+              <img src="/assets/img/color-btn-purple.png" alt="Purple button — contact">
             </a>
           </div>
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="projects/index.html">Case Studies</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+        </div>
+
+        <!-- Row 2: Navigation Words -->
+        <ul class="nav-links-row" id="nav-links-list">
+          <li>
+            <a href="/index.html#about" class="nav-link-item" data-target="about" aria-current="page" id="nav-about">about</a>
+          </li>
+          <li>
+            <a href="/projects.html" class="nav-link-item" data-target="projects" id="nav-projects">projects</a>
+          </li>
+          <li>
+            <a href="/archive.html" class="nav-link-item" data-target="archive" id="nav-archive">archive</a>
+          </li>
+          <li>
+            <a href="/index.html#systems" class="nav-link-item" data-target="systems" id="nav-systems">systems</a>
+          </li>
+          <li>
+            <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="nav-link-item" data-target="resume" id="nav-resume">resume</a>
+          </li>
+          <li>
+            <a href="/index.html#contact" class="nav-link-item" data-target="contact" id="nav-contact">contact</a>
+          </li>
+        </ul>
+
+      </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero / Intro Section -->
-    <section id="about" class="grid-container" style="margin-bottom: var(--space-2xl);">
-      <div class="col-8">
-        <span class="meta-tag">Silverhill, AL / Graphic Department Lead</span>
-        <h1>Bridging high-end brand identity with industrial precision.</h1>
-        <p>Full-stack developer and systems lead specializing in translating complex regulatory frameworks—such as AMCC/Metrc standards and OSHA/ANSI compliance—into intuitive digital consoles.</p>
-      </div>
+  <main class="page-container">
+
+    <!-- Page Intro Header (Matching Projects / Archive Layout) -->
+    <section>
+      <h1>About</h1>
+      <p class="lead">
+        Technical Designer and Developer specializing in code-driven automation, industrial pre-press workflows, and software interfaces.
+      </p>
+
+      <!-- TOC / Jump List -->
+      <ul class="site-toc-list">
+        <li><a href="#about-overview">Technical Background & Focus</a></li>
+        <li><a href="#systems-capabilities">Manufacturing & Software Disciplines</a></li>
+        <li><a href="#contact-inquiries">Communication & Contact</a></li>
+      </ul>
     </section>
 
-    <!-- Top 3 Featured Projects -->
-    <section id="projects" class="grid-container">
-      <div class="col-12">
-        <h2>Featured Projects</h2>
-        <p>Selected systems engineering and compliance-first web console developments.</p>
-      </div>
+    <!-- Content Feed Articles (Matching .project-entry / .archive-entry Layout) -->
+    <section class="content-feed">
 
-      <!-- Project 1 -->
-      <article class="col-4">
-        <div class="swiss-card">
-          <div>
-            <span class="meta-tag">Precision Agriculture</span>
-            <h3>Cultivation Console</h3>
-            <p>Integrated plant health telemetry, Metrc RFID compliance tracking, and drone environmental data visualization.</p>
-          </div>
-          <a href="projects/cultivation-console.html" aria-label="Read Cultivation Console case study">View Case Study &rarr;</a>
+      <!-- 01: Overview & Statement -->
+      <article class="content-entry" id="about-overview">
+        <h2>Technical Background & Focus</h2>
+        <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="entry-url-link">https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT</a>
+        <p>
+          My background centers on technical design for large-format manufacturing, precision CNC routing (Kongsberg tables), welding/mounting schematics, and fortifying large-scale corporate print assets under rigorous brand governance.
+        </p>
+        <p>
+          I bridge the physical and software worlds by writing custom VBA and Python automation macros, building deterministic web tools for regulatory compliance (such as OSHA 1910.145, ANSI Z535, and Metrc RFID workflows), and engineering programmable document layouts.
+        </p>
+        <p class="entry-meta-links">
+          Explore active <a href="/projects.html">projects</a>, browse the <a href="/archive.html">archive</a> of past client builds, or view the editable <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener">Typst dynamic resume</a>.
+        </p>
+      </article>
+
+      <!-- 02: Systems & Disciplines -->
+      <article class="content-entry" id="systems-capabilities">
+        <h2>Manufacturing & Software Disciplines</h2>
+        <p>
+          Core technical competencies across physical industrial production and software development:
+        </p>
+
+        <div class="capabilities-block">
+          <h3 style="color: var(--color-text-main);">Technical Design & Industrial Fabrication</h3>
+          <ul class="capabilities-list">
+            <li><strong>Large Format Production:</strong> Industrial RIP rasterization, spot color separations, substrate compatibility, and high-tolerance physical finishing.</li>
+            <li><strong>Digital Finishing & Routing:</strong> Toolpathing and CAD/CAM setup for Kongsberg precision knife and CNC router tables.</li>
+            <li><strong>Sign Mounting & Structural Schematics:</strong> Production drawings for precise welding, structural brackets, architectural sign mounting, and UL compliance.</li>
+            <li><strong>Corporate Brand Governance:</strong> Enforcing strict color fidelity (Pantone/CMYK tolerances) and visual standards for multi-facility enterprise deployments.</li>
+          </ul>
+        </div>
+
+        <div class="capabilities-block">
+          <h3 style="color: var(--color-text-main);">Software & Automation Engineering</h3>
+          <ul class="capabilities-list">
+            <li><strong>Front-End Architecture:</strong> React, TypeScript, Semantic HTML5, and native CSS design systems.</li>
+            <li><strong>Telemetry & Real-Time APIs:</strong> Node.js, Express, environmental sensor APIs, and lightweight data streaming.</li>
+            <li><strong>Generative Automation:</strong> Custom VBA macros and batch scripts for automated pre-press imposition and variable data merging.</li>
+            <li><strong>Document Systems:</strong> Programmable Typst document engines and algorithmic vector layout generation.</li>
+          </ul>
+        </div>
+
+        <div class="capabilities-block">
+          <h3 style="color: var(--color-text-main);">Regulatory & Safety Standards</h3>
+          <ul class="capabilities-list">
+            <li><strong>Industrial Safety Panels:</strong> OSHA 1910.145 warning standards and ANSI Z535 compliant visual communication systems.</li>
+            <li><strong>State Agricultural Tracking:</strong> Metrc RFID batch tracking, transfer manifests, and environmental monitoring workflows.</li>
+            <li><strong>Pharmaceutical & Medical Labeling:</strong> Strict AMCC guidelines, barcode validation, and automated compliance auditing.</li>
+          </ul>
         </div>
       </article>
 
-      <!-- Project 2 -->
-      <article class="col-4">
-        <div class="swiss-card">
-          <div>
-            <span class="meta-tag">Industrial Automation</span>
-            <h3>Compliance & Signage Engine</h3>
-            <p>Automated web application producing pharmaceutical-grade labeling adhering strictly to federal OSHA/ANSI regulations.</p>
+      <!-- 03: Direct Inquiries & Contact -->
+      <article class="content-entry" id="contact-inquiries">
+        <h2>Communication & Direct Inquiries</h2>
+        <p>
+          Feel free to reach out for technical design consulting, automation engineering, or questions regarding any of my projects:
+        </p>
+
+        <div class="contact-block">
+          <div class="contact-row">
+            <div class="contact-item">
+              <strong>Direct Email</strong>
+              <a href="mailto:RyanBMcC@gmail.com">RyanBMcC@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Source Repositories</strong>
+              <a href="https://github.com/ryanbrett" target="_blank" rel="noopener">github.com/ryanbrett</a>
+            </div>
+            <div class="contact-item">
+              <strong>Dynamic Resume</strong>
+              <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener">Typst Project (Editable) ↗</a>
+            </div>
+            <div class="contact-item">
+              <strong>Compiled Resume</strong>
+              <a href="/assets/docs/resume.pdf" target="_blank" rel="noopener">resume.pdf</a>
+            </div>
           </div>
-          <a href="projects/index.html#signage-engine" aria-label="Read Signage Engine case study">View Case Study &rarr;</a>
         </div>
       </article>
 
-      <!-- Project 3 -->
-      <article class="col-4">
-        <div class="swiss-card">
-          <div>
-            <span class="meta-tag">Generative Engineering</span>
-            <h3>Data-Merge Automation</h3>
-            <p>Generative production tool reducing variable data job preparation time from 14 minutes down to 3 minutes per unit.</p>
-          </div>
-          <a href="projects/index.html#generative-engine" aria-label="Read Data-Merge Automation case study">View Case Study &rarr;</a>
-        </div>
-      </article>
     </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="grid-container">
-      <div class="col-6">
-        <p>&copy; 2026 Ryan McCullough. Built with semantic HTML5 and native CSS.</p>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="page-container footer-grid">
+      <div>
+        <p style="margin-bottom: 0;">&copy; 2026 Ryan McCullough. Built with semantic HTML5 and native CSS.</p>
       </div>
-      <div class="col-6" style="text-align: right;">
-        <a href="https://github.com/ryanbrett" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp;
-        <a href="https://ag.ryanmccullough.dev/" target="_blank" rel="noopener">Ag Console</a>
-      </div>
+      <ul class="footer-links">
+        <li><a href="/index.html">About</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/archive.html">Archive</a></li>
+        <li><a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="https://github.com/ryanbrett" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </div>
   </footer>
 
