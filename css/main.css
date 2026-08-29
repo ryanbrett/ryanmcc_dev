@@ -386,6 +386,26 @@ header.site-header {
   color: var(--color-text-muted);
 }
 
+/* Custom App Directory List */
+.app-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  line-height: 2;
+}
+
+.app-list li {
+  color: var(--color-text-secondary);
+  font-size: var(--step-0);
+}
+
+.app-list a {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--step--1);
+}
+
 /* ==========================================================================
    CAPABILITIES & SYSTEMS LISTS
    ========================================================================== */

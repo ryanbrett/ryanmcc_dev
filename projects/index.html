@@ -35,10 +35,7 @@
             <a href="/index.html#systems" class="color-btn" data-target="systems" aria-label="Navigate to Systems" title="Systems & Architecture">
               <img src="/assets/img/color-btn-yellow.png" alt="Yellow button — systems">
             </a>
-            <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="color-btn" data-target="resume" aria-label="View Typst Dynamic Resume" title="Resume">
-              <img src="/assets/img/color-btn-teal.png" alt="Teal button — resume">
-            </a>
-            <a href="/index.html#contact" class="color-btn" data-target="contact" aria-label="Navigate to Contact" title="Contact">
+            <a href="/contact.html" class="color-btn" data-target="contact" aria-label="Navigate to Contact" title="Contact">
               <img src="/assets/img/color-btn-purple.png" alt="Purple button — contact">
             </a>
           </div>
@@ -59,10 +56,7 @@
             <a href="/index.html#systems" class="nav-link-item" data-target="systems" id="nav-systems">systems</a>
           </li>
           <li>
-            <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="nav-link-item" data-target="resume" id="nav-resume">resume</a>
-          </li>
-          <li>
-            <a href="/index.html#contact" class="nav-link-item" data-target="contact" id="nav-contact">contact</a>
+            <a href="/contact.html" class="nav-link-item" data-target="contact" id="nav-contact">contact</a>
           </li>
         </ul>
 
@@ -76,12 +70,26 @@
     <section>
       <h1>Projects</h1>
       <p class="lead">
-        Here are some tools, systems, and automation engines I've engineered across industrial manufacturing, precision agriculture, and technical workflow architecture:
+        Here are some tools, systems, and automation engines I've engineered across industrial manufacturing, precision agriculture, and technical workflow architecture.
       </p>
+      <p>
+        These include personal operational utilities engineered for my daily workflows that can also function for other users via account authentication:
+      </p>
+
+      <!-- Integrated App List -->
+      <ul class="app-list">
+        <li><a href="https://ag.ryanmcc.dev" target="_blank">[01] ag.ryanmcc.dev</a> — Agricultural Analytics & Automation</li>
+        <li><a href="https://flora.ryanmcc.dev" target="_blank">[02] flora.ryanmcc.dev</a> — Botanical Data Architecture</li>
+        <li><a href="https://floor.ryanmcc.dev" target="_blank">[03] floor.ryanmcc.dev</a> — Spatial Layout & Yield Engine</li>
+        <li><a href="https://bdgt.ryanmcc.dev" target="_blank">[04] bdgt.ryanmcc.dev</a> — Algorithmic Financial Modeling</li>
+      </ul>
 
       <!-- TOC / Year List -->
       <ul class="projects-toc-list">
-        <li><a href="#cultivation-console">Cultivation Console</a> (2026)</li>
+        <li><a href="#ag-ryanmcc">ag.ryanmcc.dev (Cultivation Console)</a> (2026)</li>
+        <li><a href="#flora-ryanmcc">flora.ryanmcc.dev (Botanical Data Architecture)</a> (2026)</li>
+        <li><a href="#floor-ryanmcc">floor.ryanmcc.dev (Spatial Layout & Yield Engine)</a> (2026)</li>
+        <li><a href="#bdgt-ryanmcc">bdgt.ryanmcc.dev (Algorithmic Financial Modeling)</a> (2026)</li>
         <li><a href="#typst-resume">Typst Dynamic Variable Resume</a> (2026)</li>
         <li><a href="#compliance-signage">Compliance & Safety Signage Engine</a> (2025)</li>
         <li><a href="#datamerge-engine">VBA Generative Data-Merge Engine</a> (2025)</li>
@@ -92,31 +100,67 @@
     <!-- Individual Project Descriptions -->
     <section class="projects-feed">
       
-      <!-- 01: Cultivation Console -->
-      <article class="project-entry" id="cultivation-console">
-        <h2>Cultivation Console</h2>
-        <a href="https://ag.ryanmccullough.dev/" target="_blank" rel="noopener" class="project-url-link">https://ag.ryanmccullough.dev</a>
+      <!-- 01: ag.ryanmcc.dev -->
+      <article class="project-entry" id="ag-ryanmcc">
+        <h2>ag.ryanmcc.dev — Agricultural Analytics & Automation</h2>
+        <a href="https://ag.ryanmcc.dev" target="_blank" rel="noopener" class="project-url-link">https://ag.ryanmcc.dev</a>
         <p>
-          A unified operational web console integrating plant health visualization, RFID batch-tracking logic (Metrc compliance), and drone environmental data into a single responsive interface. I engineered this to solve the operational fragmentation and high audit overhead farm operators face when juggling disconnected sensor dashboards and compliance spreadsheets.
+          A unified operational web console integrating plant health visualization, RFID batch-tracking logic (Metrc compliance), and environmental sensor telemetry into a single responsive interface. Engineered to eliminate operational fragmentation and high audit overhead in commercial agricultural setups.
         </p>
         <p class="project-meta-links">
-          There's also a detailed <a href="/projects/cultivation-console.html">case study and architecture overview</a> about the project, or you can explore the <a href="https://ag.ryanmccullough.dev/" target="_blank" rel="noopener">live console demo</a>.
+          Read the <a href="/projects/cultivation-console.html">case study & architecture overview</a> or explore the <a href="https://ag.ryanmcc.dev" target="_blank" rel="noopener">live application</a>.
         </p>
       </article>
 
-      <!-- 02: Typst Dynamic Resume -->
+      <!-- 02: flora.ryanmcc.dev -->
+      <article class="project-entry" id="flora-ryanmcc">
+        <h2>flora.ryanmcc.dev — Botanical Data Architecture</h2>
+        <a href="https://flora.ryanmcc.dev" target="_blank" rel="noopener" class="project-url-link">https://flora.ryanmcc.dev</a>
+        <p>
+          A botanical taxonomy and cultivation management database built for logging cultivar lineage, phenotype variances, nutrient feeding schedules, and photoperiod cycles. Includes structured query interfaces and export pipelines for field inspection audits.
+        </p>
+        <p class="project-meta-links">
+          Live tool accessible at <a href="https://flora.ryanmcc.dev" target="_blank" rel="noopener">flora.ryanmcc.dev ↗</a>.
+        </p>
+      </article>
+
+      <!-- 03: floor.ryanmcc.dev -->
+      <article class="project-entry" id="floor-ryanmcc">
+        <h2>floor.ryanmcc.dev — Spatial Layout & Yield Engine</h2>
+        <a href="https://floor.ryanmcc.dev" target="_blank" rel="noopener" class="project-url-link">https://floor.ryanmcc.dev</a>
+        <p>
+          An algorithmic 2D spatial optimization tool designed for planning grow-room canopies, manufacturing table layouts, and industrial equipment footprints. Calculates square-footage utilization, HVAC air-flow clearances, and projected yield densities under varying geometric constraints.
+        </p>
+        <p class="project-meta-links">
+          Live layout planner at <a href="https://floor.ryanmcc.dev" target="_blank" rel="noopener">floor.ryanmcc.dev ↗</a>.
+        </p>
+      </article>
+
+      <!-- 04: bdgt.ryanmcc.dev -->
+      <article class="project-entry" id="bdgt-ryanmcc">
+        <h2>bdgt.ryanmcc.dev — Algorithmic Financial Modeling</h2>
+        <a href="https://bdgt.ryanmcc.dev" target="_blank" rel="noopener" class="project-url-link">https://bdgt.ryanmcc.dev</a>
+        <p>
+          A deterministic financial modeling and capital budgeting engine. Designed for tracking equipment depreciation (CNC tables, large format printers), calculating substrate consumable burn rates, and running cash-flow projections with zero reliance on bloated third-party spreadsheet SaaS tools.
+        </p>
+        <p class="project-meta-links">
+          Explore the engine at <a href="https://bdgt.ryanmcc.dev" target="_blank" rel="noopener">bdgt.ryanmcc.dev ↗</a>.
+        </p>
+      </article>
+
+      <!-- 05: Typst Dynamic Resume -->
       <article class="project-entry" id="typst-resume">
         <h2>Typst Dynamic Variable Resume</h2>
-        <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener" class="project-url-link">https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT</a>
+        <a href="https://github.com/ryanbrett/typst/" target="_blank" rel="noopener" class="project-url-link">https://github.com/ryanbrett/typst/</a>
         <p>
-          A dynamic, code-driven resume document system built with Typst. Instead of wrestling with static layout applications or fragile markup, this uses programmable Typst code to create variable-driven, pixel-precise PDF outputs with custom typographic hierarchy and clean modular data structures.
+          A dynamic, code-driven resume document system built with Typst. Instead of wrestling with static layout applications or fragile markup, this system uses programmable Typst code to generate variable-driven, pixel-precise document outputs with custom typographic hierarchy and modular data structures.
         </p>
         <p class="project-meta-links">
-          Check out the editable <a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener">Typst shared project</a> or download the compiled <a href="/assets/docs/resume.pdf" target="_blank" rel="noopener">resume PDF</a>.
+          Source code, typographic templates, and build configuration available on <a href="https://github.com/ryanbrett/typst/" target="_blank" rel="noopener">GitHub</a>. If you would like a direct copy of my resume, feel free to <a href="/contact.html">reach out</a>.
         </p>
       </article>
 
-      <!-- 03: Compliance & Safety Signage Engine -->
+      <!-- 06: Compliance & Safety Signage Engine -->
       <article class="project-entry" id="compliance-signage">
         <h2>Compliance & Safety Signage Engine</h2>
         <p>
@@ -127,7 +171,7 @@
         </p>
       </article>
 
-      <!-- 04: VBA Generative Data-Merge Engine -->
+      <!-- 07: VBA Generative Data-Merge Engine -->
       <article class="project-entry" id="datamerge-engine">
         <h2>VBA Generative Data-Merge Engine</h2>
         <p>
@@ -138,7 +182,7 @@
         </p>
       </article>
 
-      <!-- 05: Kongsberg CNC Pre-flight Tool -->
+      <!-- 08: Kongsberg CNC Pre-flight Tool -->
       <article class="project-entry" id="kongsberg-automation">
         <h2>Kongsberg CNC & Routing Pre-flight</h2>
         <p>
@@ -163,7 +207,7 @@
         <li><a href="/index.html">About</a></li>
         <li><a href="/projects.html">Projects</a></li>
         <li><a href="/archive.html">Archive</a></li>
-        <li><a href="https://typst.app/project/Rf7azzrnFt4f3M9jEQcUkT" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="/contact.html">Contact</a></li>
         <li><a href="https://github.com/ryanbrett" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </div>
