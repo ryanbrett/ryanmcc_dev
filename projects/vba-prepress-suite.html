@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/RM-Logo.svg" />
+  <title>Case Study: Departmental Pre-Press Automation Suite & CorelDraw VBA Library — Ryan McCullough</title>
+  <meta name="description" content="Case study on the departmental CorelDraw VBA automation suite, custom UserForm tools, pre-press error correction, and variable data efficiency.">
+  <link rel="stylesheet" href="/css/main.css">
+  <script defer src="/js/nav.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="page-container">
+      <nav class="nav-cluster" aria-label="Main Navigation">
+        
+        <!-- Row 1: Brand Identifier + Color Buttons -->
+        <div class="nav-brand-row">
+          <a href="/index.html" class="brand-title" id="brand-link" title="Ryan McCullough — Home">
+            Ryan McCullough
+          </a>
+
+          <div class="color-buttons-group" id="color-buttons-group" role="group" aria-label="Interactive Navigation Squares">
+            <a href="/index.html#about" class="color-btn" data-target="about" aria-label="Navigate to About" title="About">
+              <img src="/assets/img/color-btn-beige.png" alt="Beige button — about">
+            </a>
+            <a href="/projects.html" class="color-btn is-active" data-target="projects" aria-label="Navigate to Projects" title="Projects">
+              <img src="/assets/img/color-btn-green.png" alt="Green button — projects">
+            </a>
+            <a href="/archive.html" class="color-btn" data-target="archive" aria-label="Navigate to Archive" title="Archive">
+              <img src="/assets/img/color-btn-pink.png" alt="Pink button — archive">
+            </a>
+            <a href="/index.html#systems" class="color-btn" data-target="systems" aria-label="Navigate to Systems" title="Systems & Architecture">
+              <img src="/assets/img/color-btn-yellow.png" alt="Yellow button — systems">
+            </a>
+            <a href="/contact.html" class="color-btn" data-target="contact" aria-label="Navigate to Contact" title="Contact">
+              <img src="/assets/img/color-btn-purple.png" alt="Purple button — contact">
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2: Navigation Words -->
+        <ul class="nav-links-row" id="nav-links-list">
+          <li>
+            <a href="/index.html#about" class="nav-link-item" data-target="about" id="nav-about">about</a>
+          </li>
+          <li>
+            <a href="/projects.html" class="nav-link-item is-active" data-target="projects" id="nav-projects" aria-current="page">projects</a>
+          </li>
+          <li>
+            <a href="/archive.html" class="nav-link-item" data-target="archive" id="nav-archive">archive</a>
+          </li>
+          <li>
+            <a href="/index.html#systems" class="nav-link-item" data-target="systems" id="nav-systems">systems</a>
+          </li>
+          <li>
+            <a href="/contact.html" class="nav-link-item" data-target="contact" id="nav-contact">contact</a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-container">
+    
+    <!-- Case Study Header -->
+    <section>
+      <span class="meta-tag">Case Study // Industrial Automation & Pre-Press Engineering</span>
+      <h1>Departmental Pre-Press Automation Suite</h1>
+      <p class="lead">
+        A comprehensive VBA software engine and custom UserForm ecosystem built to automate repetitive pre-press tasks, eliminate operator setup mistakes, and execute deterministic vector imposition across high-volume production manufacturing.
+      </p>
+      
+      <!-- Specifications Header Bar -->
+      <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; margin-top: var(--space-md); margin-bottom: var(--space-xl); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-subtle); font-family: var(--font-mono); font-size: var(--step--1);">
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">ROLE</span>
+          <span style="color: var(--color-text-main);">Lead Automation Engineer & Systems Architect</span>
+        </div>
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">STACK</span>
+          <span style="color: var(--color-text-main);">CorelDraw VBA, Windows API, RegEx, Excel Pipelines</span>
+        </div>
+        <div>
+          <span style="color: var(--color-text-dim); display: block; font-size: var(--step--2);">ANNUAL IMPACT</span>
+          <span style="color: #55d697; font-weight: 600;">400+ Hours Saved // ~$35,000+ ROI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <div style="max-width: 68ch; margin-bottom: var(--space-2xl);">
+      
+      <!-- 01: The Problem & Beyond Basic Data Merge -->
+      <section id="evolution" class="content-entry">
+        <span class="meta-tag">01 // Architectural Scope</span>
+        <h2>Beyond Simple Variable Data Merging</h2>
+        <p>
+          While standard variable data merge utilities exist out of the box in graphic software, they are fragile and limited: they fail on complex multi-line overflows, require tedious manual bounding-box setup, cannot sanitize incoming customer data, and do not handle pre-press validation or downstream CNC toolpathing.
+        </p>
+        <p>
+          To solve this for an entire production department, I developed an extensive, modular VBA automation library centered around a comprehensive <strong>UserForm pre-press cockpit</strong>. The suite intercepts raw customer spreadsheets and automates every repetitive manual step between job intake, vector rendering, color governance, and digital finishing.
+        </p>
+      </section>
+
+      <!-- 02: Core Subsystems & UserForm Tooling -->
+      <section id="subsystems" class="content-entry">
+        <span class="meta-tag">02 // Core Capabilities & Modules</span>
+        <h2>Custom UserForm Pre-Press Hub</h2>
+        <p>
+          The custom UserForm interface acts as a single centralized control panel for all department operators:
+        </p>
+        <ul class="capabilities-list" style="margin-top: var(--space-xs); font-size: var(--step-0);">
+          <li><strong>Deterministic Pre-Flight Diagnostics:</strong> Scans complex vector documents in milliseconds for unclosed sub-paths, duplicate overlapping nodes, out-of-gamut RGB elements, missing spot ink definitions, and missing registration marks.</li>
+          <li><strong>Automated Pre-Press Error Correction:</strong> Automatically converts unapproved spot inks to calibrated CMYK/Pantone tolerances, joins open curve segments, strips redundant clip masks, and generates uniform 0.125" production bleeds.</li>
+          <li><strong>Intelligent Dynamic Imposition:</strong> Programmatically calculates optimal sheet nesting densities, gutter spacing, cut-mark registration lines, and Kongsberg CNC camera fiducials based on sheet stock dimensions.</li>
+          <li><strong>RegEx Data Cleansing:</strong> Parses unstructured customer Excel manifests, automatically fixing telephone casing, address abbreviating, SKU formatting, and barcode checksums before generation.</li>
+          <li><strong>Automated Proof & Vector Exporter:</strong> Compiles low-resolution customer PDF proofs and high-resolution RIP production files in a single pass with standardized naming conventions.</li>
+        </ul>
+      </section>
+
+      <!-- 03: Data & Performance Benchmarks -->
+      <section id="metrics" class="content-entry">
+        <span class="meta-tag">03 // Verified Efficiency & Error Mitigation</span>
+        <h2>Operational Impact & Benchmark Data</h2>
+        <p>
+          The transition from manual pre-press handling to the VBA automated UserForm pipeline resulted in drastic operational gains across every metric:
+        </p>
+
+        <!-- Benchmark Comparison Table -->
+        <div class="metrics-comparison">
+          <table class="metrics-table">
+            <thead>
+              <tr>
+                <th>Workflow Operation</th>
+                <th>Manual Setup</th>
+                <th>VBA Suite</th>
+                <th>Efficiency Gain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Variable Data Job Prep (100+ units)</strong></td>
+                <td class="stat-dim">15 – 20 min</td>
+                <td class="stat-highlight">2 – 3 min</td>
+                <td class="stat-highlight">~85% Faster</td>
+              </tr>
+              <tr>
+                <td><strong>Substrate Imposition & Bleed Setup</strong></td>
+                <td class="stat-dim">8 – 12 min</td>
+                <td class="stat-highlight">Instant (15 sec)</td>
+                <td class="stat-highlight">~97% Faster</td>
+              </tr>
+              <tr>
+                <td><strong>Pre-flight & Spot Color Validation</strong></td>
+                <td class="stat-dim">5 – 8 min</td>
+                <td class="stat-highlight">Automated (&lt;5 sec)</td>
+                <td class="stat-highlight">Near-Instant</td>
+              </tr>
+              <tr>
+                <td><strong>Customer Proof PDF Generation</strong></td>
+                <td class="stat-dim">4 – 6 min</td>
+                <td class="stat-highlight">Automated (10 sec)</td>
+                <td class="stat-highlight">~95% Faster</td>
+              </tr>
+              <tr>
+                <td><strong>Manual Entry & Formatting Error Rate</strong></td>
+                <td class="stat-dim">4.2% incident rate</td>
+                <td class="stat-highlight">0.0% verified</td>
+                <td class="stat-highlight">Complete Mitigation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Across a standard operating year, this library saves over <strong>400 hours of repetitive manual drafting labor</strong> and eliminates costly substrate reprints on expensive aluminum, acrylic, and magnetic stocks—yielding over <strong>$35,000+ in direct annual ROI</strong>.
+        </p>
+      </section>
+
+      <!-- 04: Governance & Repository Notice -->
+      <section id="governance" class="content-entry" style="border-bottom: none;">
+        <span class="meta-tag">04 // Code Governance</span>
+        <h2>Source Repository & Inquiries</h2>
+        <p>
+          Because this VBA automation suite is deeply integrated with proprietary manufacturing infrastructure and internal company data schemas, the primary repository remains hosted on a private enterprise account.
+        </p>
+        <p>
+          Sanitized architectural code samples, UserForm structure snippets, and custom macro modules are available upon request. Feel free to reach out directly via the <a href="/contact.html">contact page</a>.
+        </p>
+      </section>
+
+      <div style="padding-top: var(--space-md); border-top: 1px solid var(--color-border); display: flex; gap: var(--space-md); align-items: center; flex-wrap: wrap;">
+        <a href="/projects.html">
+          &larr; Return to Projects
+        </a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="/contact.html">
+          Inquire About Automation Consulting &rarr;
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="page-container footer-grid">
+      <div>
+        <p style="margin-bottom: 0;">&copy; 2026 Ryan McCullough. Built with semantic HTML5 and native CSS.</p>
+      </div>
+      <div style="text-align: right;">
+        <a href="/projects.html">&larr; Return to Projects</a> &nbsp;|&nbsp;
+        <a href="/archive.html">Archive</a> &nbsp;|&nbsp;
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
