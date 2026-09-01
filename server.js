@@ -18,8 +18,8 @@ app.use(express.static(__dirname, {
   extensions: ['html', 'htm']
 }));
 
-// Fallback for SPA/root routes
-app.get('*all', (req, res) => {
+// Fallback for unmatched routes
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
